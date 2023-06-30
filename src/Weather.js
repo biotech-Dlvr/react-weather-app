@@ -57,7 +57,7 @@ export default function Weather(props) {
           <div className="containerdetails">
             <div className="row units">
               <div className="col details">
-                <img src={weatherData.iconUrl} id="icon" />
+                <img src={weatherData.iconUrl} id="icon" alt="Weather Icon" />
                 <Temperature celsius={Math.round(weatherData.temperature)} />
               </div>
               <div className="col details">
