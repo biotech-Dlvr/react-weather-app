@@ -1,0 +1,12 @@
+.App {
+  margin: 30px auto;
+  max-width: 600px;
+}
+.footer {
+  position: relative;
+  left: 180px;
+  font-size: smaller;
+  color: black;
+  transition: all 150ms ease;
+  text-align: center;
+}
