@@ -11,7 +11,7 @@ export default function App() {
         <Weather city={city} />
         <p className="footer">
           <a
-            href="https://github.com/biotech-Dlvr/PulusProject-Weatherapp"
+            href="https://github.com/biotech-Dlvr/react-weather-app"
             target="_blank"
           >
             GitHub repository
