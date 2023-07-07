@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
+import Forecast from "./Forecast";
 import axios from "axios";
 import Temperature from "./Temperature";
 import "./Weather.css";
@@ -37,7 +38,14 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="card" style={{ width: 800, height: 430 }}>
+      <div className="card" style={{ width: 1000, height: 460 }}>
+        <div
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL + "/sky.jpg"})`,
+            backgroundSize: "cover",
+            height: "100vh",
+          }}
+        ></div>{" "}
         <div className="card-body">
           <form className="form-wrapper" onSubmit={handleSubmit}>
             <input
@@ -70,8 +78,8 @@ export default function Weather(props) {
                 </ul>
               </div>
             </div>
+            <Forecast coordinates={weatherData.coordinates} />
           </div>
-          <div className="weatherForecast" id="forecast" />
         </div>
       </div>
     );
