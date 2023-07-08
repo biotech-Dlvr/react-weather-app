@@ -38,47 +38,44 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="card" style={{ width: 1000, height: 460 }}>
-        <div
-          style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL + "/sky.jpg"})`,
-            backgroundSize: "cover",
-            height: "100vh",
-          }}
-        ></div>{" "}
-        <div className="card-body">
-          <form className="form-wrapper" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Enter city here"
-              id="city-input"
-              onChange={handleCityChange}
-            />
-            <input className="btn" type="submit" defaultValue="Search" />
-            <button id="currentLocation">Current</button>
-          </form>
-          <h1 className="city"> {weatherData.city} </h1>
-          <h2 className="currentTime">
-            Last updated {""}
-            <FormattedDate date={weatherData.date} />
-          </h2>
-          <div className="containerdetails">
-            <div className="row units">
-              <div className="col details">
-                <img src={weatherData.iconUrl} id="icon" alt="Weather Icon" />
-                <Temperature celsius={Math.round(weatherData.temperature)} />
+      <div className="app-container">
+        <div className="card" style={{ width: 650, height: 480 }}>
+          <div className="card-body">
+            <form className="form-wrapper" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Enter city here"
+                id="city-input"
+                onChange={handleCityChange}
+              />
+              <input className="btn" type="submit" defaultValue="Search" />
+              <button id="currentLocation">Current</button>
+            </form>
+            <h1 className="city"> {weatherData.city} </h1>
+            <h2 className="currentTime">
+              Last updated {""}
+              <FormattedDate date={weatherData.date} />
+            </h2>
+            <div className="containerdetails">
+              <div className="row units">
+                <div className="col details">
+                  <img src={weatherData.iconUrl} id="icon" alt="Weather Icon" />
+                  <Temperature celsius={Math.round(weatherData.temperature)} />
+                </div>
+                <div className="col details">
+                  <ul>
+                    <li className="text-capitalize">
+                      {weatherData.description}
+                    </li>
+                    <li className="humidity">
+                      Humidity: {weatherData.humidity}%
+                    </li>
+                    <li className="wind"> Wind: {weatherData.wind} km/h </li>
+                  </ul>
+                </div>
               </div>
-              <div className="col details">
-                <ul>
-                  <li className="text-capitalize">{weatherData.description}</li>
-                  <li className="humidity">
-                    Humidity: {weatherData.humidity}%
-                  </li>
-                  <li className="wind"> Wind: {weatherData.wind} km/h </li>
-                </ul>
-              </div>
+              <Forecast coordinates={weatherData.coordinates} />
             </div>
-            <Forecast coordinates={weatherData.coordinates} />
           </div>
         </div>
       </div>

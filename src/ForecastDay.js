@@ -11,10 +11,11 @@ export default function ForecastDay(props) {
 
   function handleResponse(data) {
     console.log(data);
-    if (data.weather && data.weather.length > 0) {
+    if (data && data.weather && data.weather.length > 0) {
+      const iconUrl = `http://openweathermap.org/img/w/${data.weather[0].icon}@2x.png`;
       setWeatherData({
         ready: true,
-        icon: data.weather[0].icon,
+        icon: iconUrl,
       });
     } else {
       setWeatherData({
@@ -49,7 +50,6 @@ export default function ForecastDay(props) {
       {weatherData.ready && (
         <img
           src={weatherData.icon}
-          id="icon"
           alt="Weather Icon"
           width={42}
           style={{ display: "block", margin: "0 auto" }}
