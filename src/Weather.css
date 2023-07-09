@@ -128,11 +128,26 @@
   width: 80px;
 }
 .card {
-  margin: 0 auto;
+  margin: 0;
+  float: none;
   background-color: transparent;
   border: 2px solid rgba(216, 229, 247, 0.747);
   border-radius: 50px;
   box-shadow: grey;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card-body {
+  justify-content: center;
+  align-items: center;
+  width: 650px;
+  height: 480px;
 }
 .city {
   display: flex;
@@ -158,13 +173,24 @@
   top: -180px;
   text-align: center;
 }
-
+.row.units {
+  margin: 0%;
+  padding: 0%;
+  width: 80%;
+  height: 40%;
+}
+.details {
+  margin: 0%;
+  padding: 0%;
+  width: 80%;
+  height: 40%;
+}
 .col.details #icon {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 80%;
-  height: auto;
+  height: 40%;
   position: relative;
   top: -220px;
   left: 20px;
@@ -179,7 +205,7 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   position: relative;
   top: -390px;
-  left: 230px;
+  left: 210px;
 }
 .celsiusUnits {
   display: flex;
@@ -233,8 +259,8 @@
   font-size: 15px;
   font-style: normal;
   position: relative;
-  top: -130px;
-  left: 100px;
+  top: -150px;
+  left: 170px;
 }
 .weather {
   font-size: 10px;

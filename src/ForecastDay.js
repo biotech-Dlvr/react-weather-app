@@ -12,7 +12,8 @@ export default function ForecastDay(props) {
   function handleResponse(data) {
     console.log(data);
     if (data && data.weather && data.weather.length > 0) {
-      const iconUrl = `http://openweathermap.org/img/w/${data.weather[0].icon}@2x.png`;
+      const iconApiKey = "bfat2f300f3bf29eaf066c8oa3be4af3";
+      const iconUrl = `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${data.weather[0].icon}.png?appid=${iconApiKey}`;
       setWeatherData({
         ready: true,
         icon: iconUrl,
